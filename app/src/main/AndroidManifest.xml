@@ -24,7 +24,10 @@
         <activity android:name=".OpzioniActivity" />
         <activity android:name=".MessActivity" />
         <activity android:name=".SearchActivity" />
-        <activity android:name=".ItemActivity"></activity>
+        <activity android:name=".ItemActivity" />
+        <activity android:name=".RisSearchActivity" />
+        <activity android:name=".OptionModified" />
+        <activity android:name=".NotifyItemActivity"></activity>
     </application>
 
 </manifest>

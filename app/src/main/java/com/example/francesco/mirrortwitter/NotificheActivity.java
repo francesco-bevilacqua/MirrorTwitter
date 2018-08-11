@@ -14,9 +14,8 @@ import android.widget.ListView;
 
 public class NotificheActivity extends AppCompatActivity {
 
-    private Button butSear,butOpti,butHome,butCerc,butNoti,butMess;
-    private String Value;
-    private EditText et;
+    private Button butSear,butOpti,butHome,butCerc,butNoti,butMess,butTutt,butMenz;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,38 +27,9 @@ public class NotificheActivity extends AppCompatActivity {
         butCerc = findViewById(R.id.button4);
         butNoti = findViewById(R.id.button5);
         butMess = findViewById(R.id.button6);
+        butTutt = findViewById(R.id.button8);
+        butMenz = findViewById(R.id.button9);
 
-        EditText et = (EditText) findViewById(R.id.editText);
-
-        butSear.setEnabled(false); // set button disable initially
-
-        et.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before,
-                                      int count) {
-                // TODO Auto-generated method stub
-
-                if (s.toString().equals("")) {
-                    butSear.setEnabled(false);
-                } else {
-                    butSear.setEnabled(true);
-                }
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-
-            }
-        });
 
 
         View.OnClickListener gestore = new View.OnClickListener() {
@@ -85,6 +55,16 @@ public class NotificheActivity extends AppCompatActivity {
                         Intent i6=new Intent(NotificheActivity.this, MessActivity.class);
                         startActivity(i6);
                         break;
+                    case R.id.button8:
+                        Intent i8=new Intent(NotificheActivity.this, NotifyItemActivity.class);
+                        i8.putExtra("tipo","Tutti");
+                        startActivity(i8);
+                        break;
+                    case R.id.button9:
+                        Intent i9=new Intent(NotificheActivity.this, NotifyItemActivity.class);
+                        i9.putExtra("tipo","Menzionati");
+                        startActivity(i9);
+                        break;
                 }
             }
         };
@@ -94,6 +74,8 @@ public class NotificheActivity extends AppCompatActivity {
         butCerc.setOnClickListener(gestore);
         butMess.setOnClickListener(gestore);
         butNoti.setOnClickListener(gestore);
+        butTutt.setOnClickListener(gestore);
+        butMenz.setOnClickListener(gestore);
 
 
         ListView listView = (ListView) findViewById(R.id.listview);

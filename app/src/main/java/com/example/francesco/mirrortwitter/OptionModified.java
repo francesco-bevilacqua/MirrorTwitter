@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.francesco.mirrortwitter.Network.OkHttpProvider;
+
 import java.io.IOException;
 
 import okhttp3.Call;
@@ -13,47 +15,15 @@ import okhttp3.Callback;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
-import com.example.francesco.mirrortwitter.Network.OkHttpProvider;
 
-public class ItemActivity extends AppCompatActivity {
+public class OptionModified extends AppCompatActivity {
 
     private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item);
-        String finaValue;
-        String value;
-
-
-        Intent i= getIntent();
-        value = i.getStringExtra("Item");
-        TextView title = findViewById(R.id.textView4);
-
-        if(value.contains("ItemMain")) {
-            finaValue = value + " Lista Main";
-            title.setText(finaValue);
-
-        }else if(value.contains("ItemNotifiche")) {
-            finaValue= value + "  Lista Notifiche";
-            title.setText(finaValue);
-
-        }else if (value.contains("ItemMess")) {
-            finaValue= value + "Lista Messaggi ";
-            title.setText(finaValue);
-
-        }else if(value.contains("ItemCerca")) {
-            finaValue = value + "Lista Risultati Cercati";
-            title.setText(finaValue);
-        }else if(value.contains("ItemTutti")) {
-            finaValue = value + "Lista Notifiche";
-            title.setText(finaValue);
-        }else if(value.contains("ItemMenz")) {
-            finaValue = value + "Lista Notifiche in cui ci sei";
-            title.setText(finaValue);
-        }
-
+        setContentView(R.layout.activity_option_modified);
 
         handler = new Handler(getMainLooper());
         getUrl();
@@ -63,7 +33,7 @@ public class ItemActivity extends AppCompatActivity {
     private void getUrl() {
 
         Intent i =getIntent();
-        String value = i.getStringExtra("Item");
+        String value = i.getStringExtra("opt");
 
 
         OkHttpClient client = OkHttpProvider.getInstance().getOkHttpClient();
@@ -91,4 +61,3 @@ public class ItemActivity extends AppCompatActivity {
     }
 
 }
-

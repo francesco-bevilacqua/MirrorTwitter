@@ -14,9 +14,8 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button butSear,butOpti,butHome,butCerc,butNoti,butMess;
+    private Button butOpti,butHome,butCerc,butNoti,butMess;
     private String Value;
-    private EditText et;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,37 +28,6 @@ public class MainActivity extends AppCompatActivity {
         butNoti = findViewById(R.id.button5);
         butMess = findViewById(R.id.button6);
 
-        EditText et = (EditText) findViewById(R.id.editText);
-
-        butSear.setEnabled(false); // set button disable initially
-
-        et.addTextChangedListener(new TextWatcher() {
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before,
-                                      int count) {
-                // TODO Auto-generated method stub
-
-                if (s.toString().equals("")) {
-                    butSear.setEnabled(false);
-                } else {
-                    butSear.setEnabled(true);
-                }
-            }
-
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count,
-                                          int after) {
-                // TODO Auto-generated method stub
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                // TODO Auto-generated method stub
-
-            }
-        });
 
 
         View.OnClickListener gestore = new View.OnClickListener() {

@@ -51,27 +51,29 @@
     <ListView
         android:id="@+id/listview"
         android:layout_width="328dp"
-        android:layout_height="381dp"
+        android:layout_height="305dp"
+        android:layout_marginBottom="108dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="122dp" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
         android:id="@+id/button7"
         android:layout_width="60dp"
         android:layout_height="40dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="Option"
         android:textSize="10dp"
         app:layout_constraintBottom_toTopOf="@+id/listview"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.16" />
+        app:layout_constraintVertical_bias="0.144" />
 
     <Button
         android:id="@+id/button3"
@@ -92,34 +94,38 @@
         android:id="@+id/textView"
         android:layout_width="186dp"
         android:layout_height="32dp"
-        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:text="Notifiche"
         android:textAlignment="center"
         android:textSize="25dp"
-        app:layout_constraintBottom_toTopOf="@+id/listview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.337"
+        app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.137" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="70dp"
+        android:id="@+id/button8"
+        android:layout_width="116dp"
         android:layout_height="40dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
         android:text="Tutti"
-        tools:layout_editor_absoluteX="59dp"
-        tools:layout_editor_absoluteY="66dp" />
+        app:layout_constraintEnd_toStartOf="@+id/button9"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:text="Menzioni"
-        tools:layout_editor_absoluteX="218dp"
-        tools:layout_editor_absoluteY="66dp" />
+        android:id="@+id/button9"
+        android:layout_width="116dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginTop="16dp"
+        android:text="Menzionati"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button7" />
 
 </android.support.constraint.ConstraintLayout>
